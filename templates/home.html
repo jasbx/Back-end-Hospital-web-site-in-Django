@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<div dir="ltr">
+    <!-- Search -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <!-- endSearch -->
+
+    <!-- job_listing_area_start  -->
+    <div class="job_listing_area">
+        <div class="container">
+            <div class="job_lists">
+                <div class="row">
+{% for d in mydoctor  %}
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-4" id="home">
+        <div class="card">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{% if d.img %}{{ d.img.url }}{% else %}{% static "img/def.jpg" %}{% endif %}" class="card-img" alt="Doctor Image">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ d.name }}.D</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+                        <p class="card-text">
+                            <i class="fas fa-briefcase-medical"></i> <span style="color: blue;">Doctor</span> specialized in <span style="color: blue;">{{ d.doctor_in }}</span><br>
+                            <i class="fa fa-map-marker"></i> Address: Address Detail<br>
+                            <i class="fa fa-map-marker"></i> Reveal: <span style="color: blue;">{{ d.price }}</span> $<br>
+                            <i class="fa fa-clock-o"></i> Waiting time: <span style="color: blue;">{{ d.working_time }}</span> hour<br>
+                            <i class="fa fa-clock-o"></i> Working hours: <span style="color: blue;">{{ d.working_hours }}</span> hour<br>
+                            <i class="fa fa-clock-o"></i> Regular call price: <span style="color: blue;">Number Phone {{ d.phone }}</span>
+                        </p>
+                        <a href="{% url "detail" d.slug %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <h5 class="card-text">Doctor Evaluation</h5>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- job_listing_area_end  -->
+
+    <!-- featured_candidates_area_start  -->
+    <div class="featured_candidates_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title text-center mb-4">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="candidate_active owl-carousel">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- featured_candidates_area_end  -->
+</div>
+{% endblock body %}

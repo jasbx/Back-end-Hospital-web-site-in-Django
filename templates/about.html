@@ -1,0 +1,23 @@
+{% extends "navbar.html" %}
+{% block ok %}
+{% load static %}
+
+<section class="about" id="about">
+    <div class="container">
+        <h1 class="hadding">about<span>us</span></h1>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-fluid" src="{% static "image/Medicine (1).gif" %}" alt="Medicine Image">
+            </div>
+            <div class="col-md-6">
+                <h3>We take care of your<br>healthy</h3>
+                <p>A health care institution that provides treatment for patients by specialized medical and nursing staff.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cum tempore possimus cumque provident iste aut explicabo eveniet veniam. Laborum?</p>
+                <a href="#" class="btn btn-primary">More <span class="fa-solid fa-circle-chevron-right"></span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br><br><br><br><br>
+{% endblock ok %}

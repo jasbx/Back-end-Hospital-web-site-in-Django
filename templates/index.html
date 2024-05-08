@@ -1,0 +1,55 @@
+{% extends "navbar.html" %}
+{% block ok %}
+{% load static %}
+
+<section class="book m-5" id="book">
+    <div class="container">
+        <h1 class="hadding"><span>Book</span> Now</h1>
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="img">
+                    <img src="{% static "image/Medical prescription.gif" %}" class="img-fluid" alt="Medical Prescription">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" placeholder="Your Name" class="form-control" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" placeholder="Your Number" class="form-control" name="number" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" placeholder="Name of the Doctor" class="form-control" name="doctor" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Your Age</label>
+                        <input type="number" class="form-control" name="age" required>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="radio" id="male" name="gender" class="form-check-input " required>
+
+                            <label for="male" class="form-check-label m-3">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" id="female" name="gender" class="form-check-input" required>
+
+                            <label for="female" class="form-check-label m-3">Female</label>
+                        </div>
+                    </div>
+
+      <div class="form-group">
+        <input type="date" class="form-control mb-3" name="data" required>
+      </div>
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-primary" value="SEND">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock ok %}

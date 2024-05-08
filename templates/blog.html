@@ -1,0 +1,44 @@
+{% extends "navbar.html" %}
+{% block ok %}
+{% load static %}
+
+<br><br><br><br><br><br><br>
+
+<div class="container">
+    <h1 class="hadding">our<span>blogs</span></h1>
+
+    {% comment %} <a href="{% url "AddBlog" %}" class="btn">add blog</a> {% endcomment %}
+
+    {% for blog in item %}
+    <section class="serves" id="blog">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box-father">
+                    <div class="box">
+                        <div class="img">
+                            {% if blog.img %}
+                                <img src="{{ blog.img.url }}" class="img-fluid" alt="Blog Image">
+                            {% else %}
+                                <img src="{% static "img/def.jpg" %}" class="img-fluid" alt="Default Image">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="contant">
+                    <div class="icons"></div>
+                    <p>Author: {{ blog.name }}</p>
+                    <h3>Title: {{ blog.title }}</h3>
+                    <p>{{ blog.discribtion }}</p>
+                    <code style="font-size: 30px;">{{ blog.date }}</code>
+                    <br><br><br><br>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+</div>
+
+{% endblock ok %}
